@@ -1,4 +1,4 @@
-﻿package caurina.transitions {
+﻿package transitions {
 	
 	/**
 	 * SpecialProperty

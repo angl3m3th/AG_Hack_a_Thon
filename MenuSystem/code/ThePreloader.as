@@ -11,7 +11,7 @@
 		//width of preloader bar at 100%
 		private var fullWidth:Number; 
 		public var ldrInfo:LoaderInfo;
-		import caurina.transitions.Tweener;
+		import transitions.Tweener;
 		
 		public function ThePreloader(fullWidth:Number = 0, ldrInfo:LoaderInfo = null)
 		{

@@ -1,5 +1,5 @@
-﻿package caurina.transitions {
-    import caurina.transitions.AuxFunctions;
+﻿package transitions {
+    import transitions.AuxFunctions;
 	/**
 	 * The tween list object. Stores all of the properties and information that pertain to individual tweens.
 	 *

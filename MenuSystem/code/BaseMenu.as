@@ -1,7 +1,7 @@
 ﻿package code
 {
 	import flash.display.MovieClip;
-	import caurina.transitions.Tweener;
+	import transitions.Tweener;
 	import flash.display.Stage;
 	import flash.events.Event;
  

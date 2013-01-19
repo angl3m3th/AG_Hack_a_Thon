@@ -33,7 +33,7 @@ http://code.google.com/p/tweener/
 http://code.google.com/p/tweener/wiki/License
 */
 
-package caurina.transitions {
+package transitions {
 	
 	import flash.display.*;
 	import flash.events.Event;
