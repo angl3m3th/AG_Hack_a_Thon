@@ -90,6 +90,12 @@
 			leftArrow.addEventListener(TouchEvent.TOUCH_END , onUp);
 			rightArrow.addEventListener(TouchEvent.TOUCH_END, onUp);
 			
+			leftArrow.addEventListener(MouseEvent.MOUSE_DOWN , onHoldm);
+			rightArrow.addEventListener(MouseEvent.MOUSE_DOWN, onHoldm);
+			
+			leftArrow.addEventListener(MouseEvent.MOUSE_UP , onUpm);
+			rightArrow.addEventListener(MouseEvent.MOUSE_UP , onUpm);
+			
 			addEventListener(Event.ENTER_FRAME, onUpdate);
 		}
 		
@@ -170,6 +176,37 @@
 		}
 		
 		function onUp(evtObj:TouchEvent)
+		{
+			//trace("what? " + evtObj.target.getDirection() );
+			
+			if(evtObj.target.getDirection() == "left")
+			{
+				leftDown = false;
+			}
+			else
+			{
+				rightDown = false;
+			}
+			
+		}
+		
+		//Extra for the mice, 2 percent for looking in the mirror twice
+		function onHoldm(evtObj:MouseEvent)
+		{
+			//trace("what? " + evtObj.target.getDirection() );
+			
+			if(evtObj.target.getDirection() == "left")
+			{
+				leftDown = true;
+			}
+			else
+			{
+				rightDown = true;
+			}
+			
+		}
+		
+		function onUpm(evtObj:MouseEvent)
 		{
 			//trace("what? " + evtObj.target.getDirection() );
 			

@@ -23,6 +23,13 @@
 			btnFood.addEventListener(TouchEvent.TOUCH_BEGIN, foodLog, false, 0, true);
 			btnGames.addEventListener(TouchEvent.TOUCH_BEGIN, gameSelect, false, 0, true);
 			btnCreds.addEventListener(TouchEvent.TOUCH_BEGIN, creds, false, 0, true);
+			
+			btnBuddy.addEventListener(MouseEvent.MOUSE_DOWN, buddym,  false, 0, true);
+			btnMenu.addEventListener(MouseEvent.MOUSE_DOWN, menum,  false, 0, true);		
+			btnExercise.addEventListener(MouseEvent.MOUSE_DOWN, exerciseLogm,  false, 0, true);
+			btnFood.addEventListener(MouseEvent.MOUSE_DOWN, foodLogm, false, 0, true);
+			btnGames.addEventListener(MouseEvent.MOUSE_DOWN, gameSelectm, false, 0, true);
+			btnCreds.addEventListener(MouseEvent.MOUSE_DOWN, credsm, false, 0, true);
 		}
  
  		private function menu(e:TouchEvent):void
@@ -55,14 +62,38 @@
 			unload(new FoodLog(stageRef));
 		}
 		
-		/*function onSwipes(e:TransformGestureEvent) : void
+		//Mouse Events, for testing on computer without emulator
+		
+		private function menum(e:MouseEvent):void
 		{
-			if(e.offsetY == 1)
-			{
-				unload(new BuddyScreen(stageRef));
-			}
+			unload(new MenuScreen(stageRef));
 		}
- */
+		
+		private function credsm(e:MouseEvent):void
+		{
+			unload(new Credits(stageRef));
+		}
+		
+		private function gameSelectm(e:MouseEvent):void
+		{
+			unload(new GameSelectionScreen(stageRef));
+		}
+		
+		private function buddym(e:MouseEvent) : void
+		{
+			unload(new BuddyScreen(stageRef));
+		}
+		
+		private function exerciseLogm(e:MouseEvent) : void
+		{
+			unload(new ExerciseLog(stageRef));
+		}
+		
+		private function foodLogm(e:MouseEvent) : void
+		{
+			unload(new FoodLog(stageRef));
+		}
+		
 	}
  
 }

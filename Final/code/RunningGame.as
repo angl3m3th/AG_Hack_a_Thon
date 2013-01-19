@@ -41,10 +41,27 @@
 			leftArrow.addEventListener(TouchEvent.TOUCH_TAP, onClick);
 			rightArrow.addEventListener(TouchEvent.TOUCH_TAP, onClick);
 			
+			leftArrow.addEventListener(MouseEvent.MOUSE_DOWN, onClickm);
+			rightArrow.addEventListener(MouseEvent.MOUSE_DOWN, onClickm);
+			
 			addEventListener(Event.ENTER_FRAME, onUpdate);
 		}
 		
 		function onClick(evtObj:TouchEvent)
+		{
+			//trace("what? " + evtObj.target.getDirection() );
+			
+			if(evtObj.target.getDirection() != prevArrow)
+			{
+				var pSpeed:Number = player.getSpeed();
+				pSpeed += 3;
+				player.setSpeed(pSpeed);
+				prevArrow = evtObj.target.getDirection();
+			}
+			
+		}
+		
+		function onClickm(evtObj:MouseEvent)
 		{
 			//trace("what? " + evtObj.target.getDirection() );
 			

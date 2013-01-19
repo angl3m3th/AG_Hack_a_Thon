@@ -22,6 +22,12 @@
 			btnLaz.addEventListener(TouchEvent.TOUCH_BEGIN, fat,  false, 0, true);
 			btnHealth.addEventListener(TouchEvent.TOUCH_BEGIN, jacked,  false, 0, true);
 			btnNorm.addEventListener(TouchEvent.TOUCH_BEGIN, norm,  false, 0, true);
+			
+			btnBuddy.addEventListener(MouseEvent.MOUSE_DOWN, buddym,  false, 0, true);
+			btnMenu.addEventListener(MouseEvent.MOUSE_DOWN, menum,  false, 0, true);
+			btnLaz.addEventListener(MouseEvent.MOUSE_DOWN, fatm,  false, 0, true);
+			btnHealth.addEventListener(MouseEvent.MOUSE_DOWN, jackedm,  false, 0, true);
+			btnNorm.addEventListener(MouseEvent.MOUSE_DOWN, normm,  false, 0, true);
 		}
 
 		private function fat(e:TouchEvent):void
@@ -45,6 +51,32 @@
 		}
 		
 		private function buddy(e:TouchEvent):void
+		{
+			unload(new BuddyScreen(stageRef));
+		}
+		
+		//
+		private function fatm(e:MouseEvent):void
+		{
+			mcHowlsALot.gotoAndPlay("unhealthy");
+		}
+		
+		private function jackedm(e:MouseEvent):void
+		{
+			mcHowlsALot.gotoAndPlay("healthy");
+		}
+		
+		private function normm(e:MouseEvent):void
+		{
+			mcHowlsALot.gotoAndPlay("normal");
+		}
+		
+		private function menum(e:MouseEvent):void
+		{
+			unload(new MenuScreen(stageRef));
+		}
+		
+		private function buddym(e:MouseEvent):void
 		{
 			unload(new BuddyScreen(stageRef));
 		}

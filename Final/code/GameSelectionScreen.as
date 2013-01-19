@@ -24,6 +24,11 @@
 			btnMenu.addEventListener(TouchEvent.TOUCH_BEGIN, menu,  false, 0, true);
 			btnRun.addEventListener(TouchEvent.TOUCH_BEGIN, runtGame,  false, 0, true);
 			btnCatch.addEventListener(TouchEvent.TOUCH_BEGIN, catchGame,  false, 0, true);
+			
+			btnBuddy.addEventListener(MouseEvent.MOUSE_DOWN, buddym,  false, 0, true);
+			btnMenu.addEventListener(MouseEvent.MOUSE_DOWN, menum,  false, 0, true);
+			btnRun.addEventListener(MouseEvent.MOUSE_DOWN, runtGamem,  false, 0, true);
+			btnCatch.addEventListener(MouseEvent.MOUSE_DOWN, catchGamem,  false, 0, true);
 		}
 		
 		private function runtGame(e:TouchEvent):void
@@ -49,6 +54,34 @@
 		}
 		
 		private function buddy(e:TouchEvent):void
+		{
+			unload(new BuddyScreen(stageRef));
+		}
+		
+		//mouse evnets
+		private function runtGamem(e:MouseEvent):void
+		{
+			remove();
+			runGame = new RunningGame();
+			
+				stageRef.addChild(runGame);
+				
+		}
+		
+		private function catchGamem(e:MouseEvent):void
+		{
+			remove();
+			fallGame = new FallCatchGame();
+			
+				stageRef.addChild(fallGame);
+		}
+
+		private function menum(e:MouseEvent):void
+		{
+			unload(new MenuScreen(stageRef));
+		}
+		
+		private function buddym(e:MouseEvent):void
 		{
 			unload(new BuddyScreen(stageRef));
 		}
